@@ -1,7 +1,5 @@
 const pg = require('pg')
-//postgres
 const client = new pg.Client('postgres://localhost/petfinderz')
-//postico
 const cors = require('cors')
 const express = require('express')
 const app = express()
