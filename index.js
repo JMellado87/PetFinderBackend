@@ -15,8 +15,8 @@ app.get('/api/pets', async (req, res, next) => {
         const response = await client.query(SQL)
         console.log(response.rows)
         res.send(response.rows)
-        
-        
+
+
     } catch (error) {
         next(error)
     }
@@ -35,17 +35,19 @@ const init = async () => {
         INSERT INTO pets (name) VALUES ('dog');
         INSERT INTO pets (name, is_favorite) VALUES ('monkey', true);
         INSERT INTO pets (name) VALUES ('cat');
-    `
+        INSERT INTO pets (name) VALUES ('hamster');
+        INSERT INTO pets (name) VALUES ('parrot');
+        INSERT INTO pets (name) VALUES ('guana');
+        INSERT INTO pets (name) VALUES ('goldfish');
+        INSERT INTO pets (name) VALUES ('pokemon');
+        `
     await client.query(SQL)
     console.log("table created!")
-    
+
     const port = 3000;
     app.listen(port, () => {
         console.log(`listening on port ${port}`)
     })
-
-
-
 }
 
 init()
